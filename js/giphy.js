@@ -3,7 +3,20 @@ $(document).ready( function() {
   $(".search").click(function(event){
     event.preventDefault();
     apiCall();
-  })
+  });
+  // var menu = $('.menu');
+  // var origOffsetY = menu.offset().top;
+  //
+  // function scroll() {
+  //     if ($(window).scrollTop() >= origOffsetY) {
+  //         $('.menu').addClass('navbar-fixed-top');
+  //         $('.content').addClass('menu-padding');
+  //     } else {
+  //         $('.menu').removeClass('navbar-fixed-top');
+  //         $('.content').removeClass('menu-padding');
+  //     }
+  // }
+  //   document.onscroll = scroll;
 });
 
 
@@ -13,6 +26,7 @@ var apiCall = function() {
   var keyword = $("input[name='keyword']").val();
   console.log(keyword);
   var url = "http://api.giphy.com/v1/gifs/search?q="+keyword+"&api_key=dc6zaTOxFJmzC";
+  // &offset='+offset+'
   $.ajax({
     url: url,
     type: "GET",
