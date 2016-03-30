@@ -31,8 +31,11 @@ var apiCall = function() {
 
 
 var giphy = function(response) {
-  // add code here to append data to the body!
-  $('body').append("<div class = giphy-url></div>")
-  // $('.giphy-url').append("<p>"+response.data[0].url+"</p>")
-  $('.giphy-url').append("<img src = '"+response.data[0].images.fixed_height_small.url+"'>")
+  for (var i = 0; i < response.data.length; i++) {
+    // add code here to append data to the body!
+    $('body').append("<div class = giphy-url></div>")
+    // $('.giphy-url').append("<p>"+response.data[0].url+"</p>")
+    $('.giphy-url').append("<img src = '"+response.data[i].images.fixed_height_small.url+"'>")
+
+  }
 }
